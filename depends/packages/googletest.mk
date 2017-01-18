@@ -23,7 +23,7 @@ ifeq ($(uname_S), Darwin)
   endef
 else
   define $(package)_build_cmds
-    $(MAKE) -C make CXXFLAGS=-fPIC gtest.a
+    CXX="x86_64-w64-mingw32-g++-posix" $(MAKE) -C make CXXFLAGS=-fPIC gtest.a
   endef
 
   define $(package)_stage_cmds
