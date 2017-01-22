@@ -8,19 +8,23 @@ $(package)_build_subdir=build_unix
 define $(package)_set_vars
 $(package)_config_opts=--disable-shared --enable-cxx --disable-replication
 $(package)_config_opts_mingw32=--enable-mingw
+$(package)_config_opts_mingw64=--enable-mingw
 $(package)_config_opts_linux=--with-pic
 endef
 
+TMPVAR = $($(package)_autoconf)
+VAR = $(filter-out --host=x86_64-pc-mingw64, $(TMPVAR))
+
 define $(package)_config_cmds
-  ../dist/$($(package)_autoconf)
+  ../dist/$(VAR)
 endef
 
 define $(package)_preprocess_cmds
-   sed -i "s/WinIoCtl.h/winioctl.h/g" src/dbinc/win_db.h
- endef
+  sed -i "s/WinIoCtl.h/winioctl.h/g" src/dbinc/win_db.h
+endef
 
 define $(package)_build_cmds
-  $(MAKE) libdb_cxx-6.2.a libdb-6.2.a
+  $(MAKE) 
 endef
 
 define $(package)_stage_cmds

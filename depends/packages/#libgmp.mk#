@@ -7,11 +7,11 @@ $(package)_dependencies=
 $(package)_config_opts=--enable-cxx --disable-shared --enable-gmpcompat ABI=64
 
 define $(package)_config_cmds
-HOST=$(host)  $($(package)_autoconf) 
+$($(package)_autoconf) 
 endef
 
 define $(package)_build_cmds
-HOST=$(host)   $(MAKE) 
+$(MAKE) 
 endef
 
 define $(package)_stage_cmds
