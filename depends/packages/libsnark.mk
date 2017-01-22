@@ -1,10 +1,10 @@
 package=libsnark
-$(package)_download_path=https://github.com/z-classic/$(package)/archive/
+$(package)_download_path=https://github.com/radix42/$(package)/archive/
 $(package)_file_name=$(package)-$($(package)_git_commit).tar.gz
 $(package)_download_file=$($(package)_git_commit).tar.gz
 
-$(package)_sha256_hash=2a8712a575bd9a98c1d1b2a1ebbded554cef09eea311c58da7cbc1278c306964
-$(package)_git_commit=55e431e0117c7eea01f878244a664ad3554ea1de
+$(package)_sha256_hash=09d406fef55a2463d3a5914927a46e1b927861c3ad4d82c0c1d13294452f5b6f
+$(package)_git_commit=7bb402b10066b7c67ef67de5145f8ab734953395
 
 $(package)_dependencies=libgmp libsodium
 
