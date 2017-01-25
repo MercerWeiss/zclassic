@@ -1,17 +1,19 @@
 package=libgmp
-$(package)_version=2.7.2
-$(package)_download_path=http://www.mpir.org/
-$(package)_file_name=mpir-$($(package)_version).tar.bz2
-$(package)_sha256_hash=a7d4c33595b4f781a51c92d5d139ec2efb3cf1bf101dfc3eef5b40c54e6f45ec
+$(package)_download_path=https://github.com/joshuayabut/$(package)/archive/
+$(package)_file_name=$(package)-$($(package)_git_commit).tar.gz
+$(package)_download_file=$($(package)_git_commit).tar.gz
+$(package)_sha256_hash=193836c1acc9dc00fe2521205d7bbe1ba13263f6cbef6f02584bf6f8b34b108f
+$(package)_git_commit=053c03b1cab347671d936f43ef66b48ab5e380ee
+
 $(package)_dependencies=
-$(package)_config_opts=--enable-cxx --disable-shared --enable-gmpcompat ABI=64 --with-system-yasm=yes
+$(package)_config_opts=--enable-cxx --disable-shared
 
 define $(package)_config_cmds
-HOST=$(host)  $($(package)_autoconf) 
+  $($(package)_autoconf) --host=$(host) --build=$(build)
 endef
 
 define $(package)_build_cmds
-  $(MAKE) CPPFLAGS='-fPIC' --host=$(host) --build=$(build)
+  $(MAKE) CPPFLAGS='-fPIC'
 endef
 
 define $(package)_stage_cmds
