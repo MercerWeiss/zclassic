@@ -14,4 +14,4 @@ cd depends/ && make HOST=$HOST V=1 NO_QT=1 && cd ../
 CXXFLAGS="-I$PREFIX/include  -fopenmp"  ./configure --prefix="${PREFIX}" --with-gui=no --host="${HOST}" --enable-static --disable-shared
 sed -i 's/-lboost_system-mt /-lboost_system-mt-s /' configure
 cd src/
-CC="${CC}" CXX="${CXX}" make V=1 zcashd.exe zcash-cli.exe
+CC="${CC}" CXX="${CXX}" make V=1 # zcashd.exe zcash-cli.exe

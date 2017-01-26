@@ -1,10 +1,10 @@
 package=libsnark
-$(package)_download_path=https://github.com/joshuayabut/$(package)/archive/
+$(package)_download_path=https://github.com/radix42/$(package)/archive/
 $(package)_file_name=$(package)-$($(package)_git_commit).tar.gz
 $(package)_download_file=$($(package)_git_commit).tar.gz
 
-$(package)_sha256_hash=b13ef69fcd52cefdbed0c88efba824325bfc47e2a57c8deb219e75297d3b0486
-$(package)_git_commit=d4e3df47c736402fb1a4b81b835f4ab75c20711b
+$(package)_sha256_hash=a8eea4bc3cff9aaa9ff6480f9d5af2964efd61f561afb3df9c63669f9426b3bf
+$(package)_git_commit=e12fbb45b590319181dd4ed1a86dc14b3c927ff7
 
 $(package)_dependencies=libgmp libsodium
 
