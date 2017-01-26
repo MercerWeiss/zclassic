@@ -58,6 +58,7 @@ LIBZCASH_CONSENSUS=
 endif
 
 bin_PROGRAMS =
+noinst_PROGRAMS =
 TESTS =
 
 if BUILD_BITCOIND
@@ -492,7 +493,7 @@ libzcashconsensus_la_CPPFLAGS = -fopenmp -std=c++11 $(CRYPTO_CFLAGS) -I$(builddi
 endif
 #
 
-CLEANFILES = leveldb/libleveldb.a leveldb/libmemenv.a *.gcda *.gcno
+CLEANFILES = leveldb/libleveldb.a leveldb/libmemenv.a *.gcda *.gcno */*.gcno wallet/*/*.gcno
 
 DISTCLEANFILES = obj/build.h
 
